@@ -6,16 +6,19 @@
 #include "global.h"
 #include "remove_duplicates.h"
 #include <vector>
+
+#include <list>
+
 using namespace std;
 
 static void pregunta_6() {
-#ifdef ENABLE_TEST
+//#ifdef ENABLE_TEST
     list<int> source {1, 2, 3, 4, 5, 5, 7, 4, 5, 3, 3};
     auto result = remove_duplicates<int, list, vector>(source);
     for (const auto& item: result)
         cout << item << " ";
     cout << endl;
-#endif
+//#endif
 }
 
 TEST_CASE("Pregunta #6_4") {
