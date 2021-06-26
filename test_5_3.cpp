@@ -6,15 +6,18 @@
 #include "global.h"
 #include "have_same_elements.h"
 #include <forward_list>
+
+#include<list>
+
 using namespace std;
 
 static void pregunta_5() {
-#ifdef ENABLE_TEST
+//#ifdef ENABLE_TEST
     vector<int> vec {};
     list<int> lst {};
     cout << boolalpha;
     cout << have_same_elements(vec, lst) << endl; // true
-#endif
+//#endif
 }
 
 TEST_CASE("Pregunta #5_3") {
