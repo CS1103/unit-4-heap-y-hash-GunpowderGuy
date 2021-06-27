@@ -10,7 +10,7 @@ using namespace std;
 #ifndef POO2_UNIT5_WEEK7_REMOVE_DUPLICATES_H
 #define POO2_UNIT5_WEEK7_REMOVE_DUPLICATES_H
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, template<typename> typename T2, template<typename> typename T3>
 list<int> remove_duplicates(list<int> cont) {
   unordered_set<int> s(cont.begin(), cont.end());
   list<int> result;
