@@ -21,10 +21,10 @@ add_executable(poo2_unit5_week7
     #test_3_2.cpp
     #test_3_3.cpp
     #test_3_4.cpp
-    #test_4_1.cpp
-    #test_4_2.cpp
-    #test_4_3.cpp
-    #test_4_4.cpp
+    test_4_1.cpp
+    test_4_2.cpp
+    test_4_3.cpp
+    test_4_4.cpp
     test_5_1.cpp
     test_5_2.cpp
     test_5_3.cpp
@@ -39,7 +39,7 @@ add_executable(poo2_unit5_week7
     #p4.h p4.cpp
     p5.h p5.cpp
     p6.h p6.cpp
-    #crisscross_pairs.h
+    crisscross_pairs.h
     have_same_elements.h
     #top_distance.h
     #median.h
