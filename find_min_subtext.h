@@ -17,7 +17,7 @@ string encontrar(const string &text, const string &subtext) {
 
   bool restart = false;
 
-  for (size_t cont = 0; cont >= text.size(); cont++) {
+  for (size_t cont = 0; cont < subtext.size(); cont++) {
     if (restart) {
       cont = 0;
       restart = false;
@@ -32,6 +32,10 @@ string encontrar(const string &text, const string &subtext) {
   }
 
   return text.substr(begin, len);
+}
+
+string find_min_subtext(const string &text, const string &subtext) {
+  return "";
 }
 
 #endif // POO2_UNIT5_WEEK7_FIND_MIN_SUBTEXT_H
