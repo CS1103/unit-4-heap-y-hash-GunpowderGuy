@@ -13,7 +13,7 @@ using namespace std;
 
 using sorted_pair = pair<int, int>;
 
-sorted_pair sort(sorted_pair in) {
+inline sorted_pair sort(sorted_pair in) {
   if (in.first < in.second) {
     return in;
   } else {
@@ -29,7 +29,7 @@ public:
   }
 };
 
-vector<sorted_pair> crisscross_pairs(vector<sorted_pair> in) {
+inline vector<sorted_pair> crisscross_pairs(vector<sorted_pair> in) {
   unordered_multimap<sorted_pair, sorted_pair, pairhash> temp;
 
   for (auto elem : in) {
@@ -37,8 +37,9 @@ vector<sorted_pair> crisscross_pairs(vector<sorted_pair> in) {
   }
 
   std::vector<sorted_pair> values(temp.size());
-std::transform(temp.begin(),temp.end(),values.begin(),[](const auto& value) { return value.second; });
-return values;
+  std::transform(temp.begin(), temp.end(), values.begin(),
+                 [](const auto &value) { return value.second; });
+  return values;
 }
 
 #endif // POO2_UNIT5_WEEK7_CRISSCROSS_PAIRS_H
