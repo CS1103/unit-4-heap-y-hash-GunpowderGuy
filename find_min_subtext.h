@@ -13,25 +13,23 @@ using namespace std;
 
 string encontrar(const string &text, const string &subtext) {
   size_t begin;
-  size_t len;
+  size_t end;
 
-  bool restart = false;
-
+  bool continuar = true;
   for (size_t cont = 0; cont < subtext.size(); cont++) {
-    if (restart) {
-      cont = 0;
-      restart = false;
-    }
-    if (subtext[cont] != text[cont + begin]) {
-      begin = begin + cont;
-      restart = true;
+    cont = cont * continuar;
+
+    const size_t nuevo = text.find(subtext[cont], begin);
+
+    if (nuevo < begin) {
+      begin = nuevo;
+      continuar = false;
       continue;
-    } else if (subtext.back() == text[cont + begin]) {
-      len = cont;
     }
   }
 
-  return text.substr(begin, len);
+  end = text.find(subtext.back(), begin);
+  return text.substr(begin, end);
 }
 
 string find_min_subtext(const string &text, const string &subtext) {
