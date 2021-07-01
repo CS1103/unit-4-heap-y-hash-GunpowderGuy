@@ -9,10 +9,10 @@ endif()
 
 add_executable(poo2_unit5_week7
     main.cpp
-    #test_1_1.cpp
-    #test_1_2.cpp
-    #test_1_3.cpp
-    #test_1_4.cpp
+    test_1_1.cpp
+    test_1_2.cpp
+    test_1_3.cpp
+    test_1_4.cpp
     #test_2_1.cpp
     #test_2_2.cpp
     #test_2_3.cpp
@@ -42,7 +42,7 @@ add_executable(poo2_unit5_week7
     crisscross_pairs.h
     have_same_elements.h
     #top_distance.h
-    #median.h
+    median.h
     #find_min_subtext.h find_min_subtext.cpp
     remove_duplicates.h
 )
