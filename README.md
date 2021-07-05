@@ -1,4 +1,3 @@
-[![Work in Repl.it](https://classroom.github.com/assets/work-in-replit-14baed9a392b3a25080506f3b7b6d57f295ec2978f6f33ec97e36a161684cbe9.svg)](https://classroom.github.com/online_ide?assignment_repo_id=4885780&assignment_repo_type=AssignmentRepo)
 # Tarea #6: Estructura de datos fundamentales - Heap y Hash
 
 Problemas del curso de Programación Orientada a Objetos 2 - CS1103
@@ -66,7 +65,7 @@ Generar el template de función **`top_distance`** para que permita devolver val
 ```
 ## Problema #3 - Buscar subtexto minimo - Heap
 
-Dado un texto T y un patrón P, Escribir una función **`find_min_subtext`** que utilizando heaps ubique el mínimo subtexto S dentro de T de modo que incluya los caracteres del patrón siguiendo el mismo orden.
+Dado un texto 'T' y un patrón 'P', escribir una función **`find_min_subtext`** que, utilizando heaps, encuentre y retorne la porción del texto 'R' (contando espacios como caracter válido), de manera tal que los caracteres de P se encuentran en alguna parte de R, pero siguiendo el mismo orden de aparición de P. R tiene que ser la porción de texto que tenga el mínimo número de caracteres posible que cumpla con los requisitos.
 
 ```cpp
     // Caso de uso #1
@@ -88,7 +87,7 @@ Dado un texto T y un patrón P, Escribir una función **`find_min_subtext`** que
 ```
 ## Problema #4 - Pares cruzado - Hash
 
-Dado un contenedor de pares ordenados, Escribir el template de función **`crisscross_pairs`** que busque para cada par ordenado `p1 (i,j)` el par ordenado `p2 (i,j)` y los retorne en un contenedor del mismo tipo que el original.
+Dado un contenedor de pares ordenados, Escribir el template de función **`crisscross_pairs`** que busque para cada par ordenado `p1 (i,j)` el par ordenado `p2 (j,i)` y  retorne ambos pares encontrados en un contenedor del mismo tipo que el original.
 
 ```cpp
     // Caso de uso #1

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "global.h"
 #include "median.h"
+#include "p1.h"
 using namespace std;
 
 void pregunta_1() {

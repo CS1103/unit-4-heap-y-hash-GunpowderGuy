@@ -11,7 +11,7 @@ using namespace std;
 #ifndef POO2_UNIT5_WEEK7_FIND_MIN_SUBTEXT_H
 #define POO2_UNIT5_WEEK7_FIND_MIN_SUBTEXT_H
 
-string encontrar(const string &text, const string &subtext) {
+inline string encontrar(const string &text, const string &subtext) {
   size_t begin;
   size_t end;
 
@@ -32,7 +32,7 @@ string encontrar(const string &text, const string &subtext) {
   return text.substr(begin, end);
 }
 
-string find_min_subtext(const string &text, const string &subtext) {
+inline string find_min_subtext(const string &text, const string &subtext) {
   return "";
 }
 

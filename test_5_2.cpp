@@ -9,12 +9,12 @@
 using namespace std;
 
 static void pregunta_5() {
-//#ifdef ENABLE_TEST
+#ifdef ENABLE_TEST
     forward_list<int> fl1 {1, 1, 1, 1, 1};
     forward_list<int> fl2 {1, 1, 1, 1, 1, 1, 1};
     cout << boolalpha;
     cout << have_same_elements(fl1, fl2) << endl; // false
-//#endif
+#endif
 }
 
 TEST_CASE("Pregunta #5_2") {

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "global.h"
 #include <string>
+#include "p3.h"
 #include "find_min_subtext.h"
 using namespace std;
 

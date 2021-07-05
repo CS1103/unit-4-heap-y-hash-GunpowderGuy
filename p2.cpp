@@ -6,6 +6,7 @@
 #include <vector>
 #include "top_distance.h"
 #include "global.h"
+#include "p1.h"
 using namespace std;
 
 void pregunta_2() {

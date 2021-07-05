@@ -5,9 +5,9 @@
 #ifndef POO2_PC1_2021_0_GLOBAL_H
 #define POO2_PC1_2021_0_GLOBAL_H
 
-// ALERTA!!! --> descomentar las siguientes 2 lineas si desea ejecutar las pruebas
-//#define RUN_TEST
-//#define ENABLE_TEST
+// ALERTA!!! --> des comentar las siguientes 2 lineas si desea ejecutar las pruebas
+#define RUN_TEST
+//  #define ENABLE_TEST
 
 // Additional Libraries
 #include <iostream>

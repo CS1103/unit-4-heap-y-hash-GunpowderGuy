@@ -7,6 +7,7 @@
 #include "crisscross_pairs.h"
 #include <vector>
 #include <utility>
+#include "p4.h"
 using namespace std;
 
 void pregunta_4() {

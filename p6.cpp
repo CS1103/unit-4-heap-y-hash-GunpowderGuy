@@ -6,6 +6,7 @@
 #include "global.h"
 #include "remove_duplicates.h"
 #include <forward_list>
+#include "p6.h"
 using namespace std;
 
 void pregunta_6() {
