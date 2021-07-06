@@ -8,20 +8,30 @@
 #include <iostream>
 #include <vector>
 
+#include <algorithm>
+
 using namespace std;
 
 template <typename T> class median {
   vector<T> vec;
 
+  T mediana() const {
+    sort(vec.begin(), vec.end());
+
+    if (vec.size() % 2 != 0) {
+      return vec[vec.size() / 2];
+    } else {
+      return 0.5 * (vec[vec.size() / 2 - 1] + vec[vec.size() / 2]);
+    }
+  }
+
 public:
   median(initializer_list<T> l) : vec(l) {}
 
-  T mediana() const { return 1; }
+  ostream &operator<<(ostream &os) const {
+    os << this->mediana();
+    return os;
+  }
 };
-
-template <typename T> ostream &operator<<(ostream &os, const median<T> &t) {
-  os << t.mediana();
-  return os;
-}
 
 #endif // POO2_UNIT5_WEEK7_MEDIAN_H
