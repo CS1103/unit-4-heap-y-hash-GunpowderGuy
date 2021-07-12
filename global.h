@@ -7,7 +7,7 @@
 
 // ALERTA!!! --> des comentar las siguientes 2 lineas si desea ejecutar las pruebas
 #define RUN_TEST
-//  #define ENABLE_TEST
+ #define ENABLE_TEST
 
 // Additional Libraries
 #include <iostream>
