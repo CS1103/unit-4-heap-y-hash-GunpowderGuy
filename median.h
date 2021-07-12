@@ -9,28 +9,32 @@
 #include <vector>
 
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
 template <typename T> class median {
   vector<T> vec;
 
-  T mediana() const {
+  T mediana() {
     sort(vec.begin(), vec.end());
 
-    if (vec.size() % 2 != 0) {
-      return vec[vec.size() / 2];
-    } else {
-      return 0.5 * (vec[vec.size() / 2 - 1] + vec[vec.size() / 2]);
-    }
+    
+     if (vec.size() % 2 != 0) {
+       return vec[vec.size() / 2];
+     } else {
+       return 0.5 * (vec[vec.size() / 2 - 1] + vec[vec.size() / 2]);
+     }
+    
+
+    // return vec[vec.size()/2 - 1];
   }
 
 public:
   median(initializer_list<T> l) : vec(l) {}
 
-  ostream &operator<<(ostream &os) const {
-    os << this->mediana();
-    return os;
+  friend std::ostream &operator<<(std::ostream &lhs, median &rhs) {
+    return lhs << rhs.mediana();
   }
 };
 
