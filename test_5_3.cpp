@@ -6,6 +6,9 @@
 #include "global.h"
 #include "have_same_elements.h"
 #include <forward_list>
+
+#include<list>
+
 using namespace std;
 
 static void pregunta_5() {
