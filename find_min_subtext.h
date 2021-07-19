@@ -3,6 +3,7 @@
 //
 
 #include <cstddef>
+#include <iostream>
 #include <string>
 #include <utility>
 
@@ -15,11 +16,15 @@ inline string encontrar(const string &text, const string &subtext) {
   size_t begin;
   size_t end;
 
-  bool continuar = true;
+  bool continuar = false;
   for (size_t cont = 0; cont < subtext.size(); cont++) {
-    cont = cont * continuar;
 
+    cout << ""; // crashea si quito esto
     const size_t nuevo = text.find(subtext[cont], begin);
+
+    if (continuar == false) {
+      break;
+    }
 
     if (nuevo < begin) {
       begin = nuevo;
@@ -33,7 +38,8 @@ inline string encontrar(const string &text, const string &subtext) {
 }
 
 inline string find_min_subtext(const string &text, const string &subtext) {
-  return "";
+  // cout << "texto" << text << "subtexto" << subtext;
+  return encontrar(text, subtext);
 }
 
 #endif // POO2_UNIT5_WEEK7_FIND_MIN_SUBTEXT_H
