@@ -39,13 +39,13 @@ inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
   }
 
   std::vector<sorted_pair> values(temp.size());
-  std::vector<sorted_pair> values2;
+  std::vector<sorted_pair> values2(temp.size());
 
   std::transform(temp.begin(), temp.end(), values.begin(),
                  [](const auto &value) { return value.second; });
   std::copy_if(values.begin(), values.end(), values2.begin(),
                [&temp](const auto &value) {
-                 if (temp.count(sort(value))) {
+                 if (temp.count(sort(value)) >= 2) {
                    return true;
                  } else {
                    return false;
