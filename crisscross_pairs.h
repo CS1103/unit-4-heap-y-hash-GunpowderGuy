@@ -3,8 +3,8 @@
 //
 
 #include <algorithm>
+#include <map>
 #include <unordered_map>
-#include<map>
 #include <utility>
 #include <vector>
 using namespace std;
@@ -31,7 +31,7 @@ public:
 };
 
 inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
-  //unordered_multimap<sorted_pair, sorted_pair, pairhash> temp;
+  // unordered_multimap<sorted_pair, sorted_pair, pairhash> temp;
   multimap<sorted_pair, sorted_pair> temp;
 
   for (auto elem : in) {
@@ -39,17 +39,15 @@ inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
   }
 
   std::vector<sorted_pair> values(temp.size());
-  std::vector<sorted_pair> values2(temp.size());
+
+  vector<sorted_pair>::iterator itr;
+  std::vector<sorted_pair> values2;
 
   std::transform(temp.begin(), temp.end(), values.begin(),
                  [](const auto &value) { return value.second; });
-  std::copy_if(values.begin(), values.end(), values2.begin(),
-               [&temp](const auto &value) {
-                 if (temp.count(sort(value)) >= 2) {
-                   return true;
-                 } else {
-                   return false;
-                 }
+  std::copy_if(values.begin(), values.end(), inserter(values2, itr),
+               [&temp](const auto &value) -> bool {
+                 return temp.count(sort(value)) >= 2;
                });
 
   return values2;
