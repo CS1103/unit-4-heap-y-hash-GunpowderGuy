@@ -4,9 +4,11 @@
 
 #include <algorithm>
 #include <map>
+#include <set>
 #include <unordered_map>
 #include <utility>
 #include <vector>
+
 using namespace std;
 
 #ifndef POO2_UNIT5_WEEK7_CRISSCROSS_PAIRS_H
@@ -30,6 +32,15 @@ public:
   }
 };
 
+inline bool comparar(sorted_pair a, sorted_pair b) {
+  if((a.first + a.second) == (b.first + b.second)){
+    return a > b;
+  } else {
+    return a.first + a.second > b.first + b.second;
+  }
+//return a.first + a.second < b.first + b.second;
+}
+
 inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
   // unordered_multimap<sorted_pair, sorted_pair, pairhash> temp;
   multimap<sorted_pair, sorted_pair> temp;
@@ -40,17 +51,22 @@ inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
 
   std::vector<sorted_pair> values(temp.size());
 
-  vector<sorted_pair>::iterator itr;
-  std::vector<sorted_pair> values2;
+  set<sorted_pair, decltype(comparar)*> values2;
+  //set<sorted_pair> values2;
 
   std::transform(temp.begin(), temp.end(), values.begin(),
                  [](const auto &value) { return value.second; });
-  std::copy_if(values.begin(), values.end(), inserter(values2, itr),
-               [&temp](const auto &value) -> bool {
-                 return temp.count(sort(value)) >= 2;
-               });
 
-  return values2;
+
+  for (auto elem : values) {
+    if (temp.count(sort(elem)) >= 2) {
+      values2.insert(elem);
+    }
+  }
+
+  vector<sorted_pair> values3(values2.begin(), values2.end());
+
+  return values3;
 }
 
 #endif // POO2_UNIT5_WEEK7_CRISSCROSS_PAIRS_H
