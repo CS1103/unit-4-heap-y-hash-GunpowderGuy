@@ -14,9 +14,24 @@ using namespace std;
 template <typename T1, template <typename> typename T2,
           template <typename> typename T3>
 list<int> remove_duplicates(list<int> cont) {
-  unordered_set<int> s(cont.begin(), cont.end());
+  /*unordered_set<int> s(cont.begin(), cont.end());
   list<int> result;
   result.assign(s.begin(), s.end());
+
+  return result;*/
+
+  unordered_set<double> s(cont.begin(), cont.end());
+  list<int> result(s.size());
+
+  copy_if(cont.begin(), cont.end(), result.begin(), [&s](double x) {
+    unordered_set<double>::iterator encontrado = find(s.begin(), s.end(), x);
+    if (encontrado != s.end()) {
+      s.erase(encontrado);
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   return result;
 }
@@ -24,8 +39,6 @@ list<int> remove_duplicates(list<int> cont) {
 template <typename Cont> Cont remove_duplicates(const Cont cont) {
   unordered_set<double> s(cont.begin(), cont.end());
   Cont result(s.size());
-
-  // result.assign(s.begin(), s.end());
 
   copy_if(cont.begin(), cont.end(), result.begin(), [&s](double x) {
     unordered_set<double>::iterator encontrado = find(s.begin(), s.end(), x);
