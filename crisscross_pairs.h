@@ -33,12 +33,12 @@ public:
 };
 
 inline bool comparar(sorted_pair a, sorted_pair b) {
-  if((a.first + a.second) == (b.first + b.second)){
+  if ((a.first + a.second) == (b.first + b.second)) {
     return a > b;
   } else {
     return a.first + a.second > b.first + b.second;
   }
-//return a.first + a.second < b.first + b.second;
+  // return a.first + a.second < b.first + b.second;
 }
 
 inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
@@ -51,22 +51,22 @@ inline vector<sorted_pair> crisscross_pairs(const vector<sorted_pair> &in) {
 
   std::vector<sorted_pair> values(temp.size());
 
-  set<sorted_pair, decltype(comparar)*> values2;
-  //set<sorted_pair> values2;
+  // set<sorted_pair, decltype(comparar)*> values2;
+  vector<sorted_pair> values2;
 
   std::transform(temp.begin(), temp.end(), values.begin(),
                  [](const auto &value) { return value.second; });
 
-
-  for (auto elem : values) {
-    if (temp.count(sort(elem)) >= 2) {
-      values2.insert(elem);
+  for (const auto elem : values) {
+    if (temp.count(sort(elem)) >= 2 &&
+        (find(values2.begin(), values2.end(), elem) == values2.end())) {
+      values2.push_back(elem);
     }
   }
 
-  vector<sorted_pair> values3(values2.begin(), values2.end());
+  // vector<sorted_pair> values3(values2.begin(), values2.end());
 
-  return values3;
+  return values2;
 }
 
 #endif // POO2_UNIT5_WEEK7_CRISSCROSS_PAIRS_H
