@@ -25,22 +25,26 @@ inline int distancia(const point<int> a, const point<int> b) {
   return pow(a.x - b.x, 2) + pow(a.y - b.y, 2);
 }
 
-class comparasion{
+class compare {
   point<int> centro;
 
-  public:
+public:
+  compare(point<int> var) : centro(var) {}
 
-  comparasion(point<int> var) : centro(var) {}
+  bool operator()(point<int> a, point<int> b) {
+    return distancia(a, centro) < distancia(b, centro);
+  }
 };
 
 template <int i, typename function>
 inline vector<point<int>> top_distance(const vector<point<int>> &cont,
-                                const point<int> origen) {
+                                       const point<int> origen) {
 
   std::vector<int> vec{3, 1, 4, 1, 5};
   std::priority_queue<int> pq3{std::less<int>(), vec};
 
-  priority_queue<point<int>> heap; //{less<point<int>>(), cont};
+  priority_queue<point<int>, vector<point<int>>, compare>
+      heap; //{comparasion{origen}, cont};
 
   return vector<point<int>>();
 }
