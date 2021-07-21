@@ -13,10 +13,10 @@ add_executable(poo2_unit5_week7
     test_1_2.cpp
     test_1_3.cpp
     test_1_4.cpp
-    #test_2_1.cpp
-    #test_2_2.cpp
-    #test_2_3.cpp
-    #test_2_4.cpp
+    test_2_1.cpp
+    test_2_2.cpp
+    test_2_3.cpp
+    test_2_4.cpp
     test_3_1.cpp
     test_3_2.cpp
     test_3_3.cpp
@@ -34,7 +34,7 @@ add_executable(poo2_unit5_week7
     test_6_3.cpp
     test_6_4.cpp
     p1.h p1.cpp
-    #p2.h p2.cpp
+    p2.h p2.cpp
     p3.h p3.cpp
     p4.h p4.cpp
     p5.h p5.cpp
