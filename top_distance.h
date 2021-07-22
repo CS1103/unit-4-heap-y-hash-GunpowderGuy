@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <functional>
+#include <ostream>
 #include <queue>
 #include <vector>
 
@@ -36,17 +37,18 @@ public:
   }
 };
 
+//vector<point<int>>
 template <int i, typename function>
 inline vector<point<int>> top_distance(const vector<point<int>> &cont,
                                        const point<int> origen) {
 
-  std::vector<int> vec{3, 1, 4, 1, 5};
-  std::priority_queue<int> pq3{std::less<int>(), vec};
+  //std::vector<int> vec{3, 1, 4, 1, 5};
+  //std::priority_queue<int> pq3{std::less<int>(), vec};
 
-  priority_queue<point<int>, vector<point<int>>, compare>
-      heap; //{comparasion{origen}, cont};
+  priority_queue<point<int>, vector<point<int>>, compare> mi_heap{compare(origen),
+                                                               cont};
 
-  return vector<point<int>>();
+  return vector<point<int>>(mi_heap.begin(),mi_heap.end());
 }
 
 #endif // POO2_UNIT5_WEEK7_TOP_DISTANCE_H
